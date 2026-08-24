@@ -24,7 +24,7 @@ The user was told this explicitly and accepted it.
 
 - 6 static pages, no framework, no build step, no CDN, no npm
 - Motion is one fade, hand-written. No library was ever needed and none is wanted
-- No photography exists; all imagery is SVG line-work drawn in code
+- Photography is free-licensed stock placeholder; line-work is the fallback (see Photography)
 - Nastaliq used ceremonially, on fabric bolt names only
 - Menswear only, no bridal
 - Fitting-request form → WhatsApp deep link, no cart
@@ -44,6 +44,7 @@ fitting.html            Measurement card form
 
 assets/css/kifa.css        tokens, grounds, type scale, the one reveal, nav
 assets/css/components.css  opening, rules row, plates, count, sequence, bolts, card, footer
+assets/img/                photographs, wired by filename (all placeholder)
 assets/js/site.js          ALL CONTENT — one file, edit here
 assets/js/art.js           wordmark + every drawing
 assets/js/blocks.js        repeated markup builders
@@ -132,6 +133,4 @@ testimonial.
   the secondary link is what goes.
 - Still unanswered by the client: real phone/email/hours, real prices, real groom stories
   with signed releases, Urdu spelling review. See `PLACEHOLDERS.md`.
-- `C:` is full (under 1 MB free) on this machine; bash pipes fail with
-  "No space left on device". Nothing to do with the site, but it breaks tooling.
 - Caveman plugin statusline setup was offered and never answered.
