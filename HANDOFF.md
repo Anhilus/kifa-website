@@ -3,7 +3,9 @@
 ## Project
 
 Building a premium heritage website for **KIFA**, Indian made-to-measure menswear.
-Working directory: `D:\kifa website`. Not a git repo.
+Working directory: `D:\kifa website`. Git repo, pushed to
+`https://github.com/Anhilus/kifa-website` (public), served by GitHub Pages at
+`https://anhilus.github.io/kifa-website/`. The brand-book .docx is gitignored on purpose.
 
 Source of truth: `kifa-brand-guidelines-v0.1.docx` in the project root — a real brand
 book (colour, typography, wordmark spec, photography rules, layout rules, voice rules).
@@ -105,8 +107,23 @@ cd "D:/kifa website" && python -m http.server 8123
 
 Then `http://localhost:8123`. Or use the Browser pane: `preview_start` with name `kifa`.
 
+## Photography
+
+Every image in `assets/img/` is free-licensed stock standing in for a real shoot. Wiring is
+by filename: each collection record has an `img` field, craft shots come from the shared
+`SITE.photo` map keyed by drawing name, and anything without a photo falls back to the
+line-work in `art.js`. Dropping real files over the same names updates the site with no
+code change. `PLACEHOLDERS.md` lists all 28 files with sources.
+
+The garment x ground row on the home page stays drawn deliberately — it teaches the
+photography rule, and a stock photo's own background contradicts the caption next to it.
+
+Groom records use garment-only photographs. Do not put a stock face beside an invented
+testimonial.
+
 ## Open threads
 
+- Live URL is up and verified: all images load, no console errors, no failed requests.
 - The client has not yet seen the quiet build. Screenshots exist for all six pages at
   1440x900 and 375x812, console clean, `prefers-reduced-motion` renders complete.
 - The phone opening no longer fits one screen (garment 36vh plus the copy stack runs to
