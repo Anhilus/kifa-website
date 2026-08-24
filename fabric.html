@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KIFA — Fabric library</title>
+<meta name="description" content="Raw silk, kamkhwab, mashru, jamawar, khaddar. Every bolt with its name, composition and width.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800&family=Lora:ital,wght@0,400;1,400;1,500&family=Mukta:wght@800&family=Noto+Nastaliq+Urdu:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/kifa.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2316263D'/%3E%3Cpath d='M11 12h13l-3 8H8z' fill='%23A8843C'/%3E%3C/svg%3E">
+</head>
+<body>
+
+<main id="main">
+
+  <section class="section ground g-indigo wrap" data-ground="indigo"
+           style="padding-top:clamp(140px,20vh,240px)">
+    <div class="grid g-12">
+      <div class="col-7">
+        <p class="eyebrow rv"><span class="tick"></span>Fabric library</p>
+        <div class="hairline hairline--short rv mt-s"></div>
+        <h1 class="hook rv mt-m">You choose<br>off the bolt.</h1>
+      </div>
+      <div class="col-4 start-9" style="align-self:end">
+        <p class="voice muted rv">Raw silk, ivory, from the bolt on the left.</p>
+        <p class="body muted mt-m rv">
+          In the shop, in daylight, with the bolt in your hands. We tell you the composition,
+          the width, and what the cloth does after four hours of a wedding.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Nastaliq note: 10 Application — the bolt tag is where it earns its keep -->
+  <section class="section--tight ground g-indigo wrap" data-ground="indigo" style="padding-top:0">
+    <div class="rule-t" style="padding-top:clamp(28px,3.4vw,48px)">
+      <div class="grid g-12">
+        <div class="col-4">
+          <p class="eyebrow rv"><span class="tick"></span>On the bolt tag</p>
+        </div>
+        <div class="col-7 start-6">
+          <p class="body muted rv">
+            The fabric bolt tag is the one place the Nastaliq script earns its keep, so it is the
+            one place we use it. Name, composition, width — nothing decorative, nothing translated
+            badly, and never on a headline.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- the bolts -->
+  <section class="section ground g-chalk wrap" data-ground="chalk">
+    <ul id="bolts"></ul>
+    <p class="spec muted mt-l rv">
+      Stock changes weekly. Widths are as milled and are checked again before cutting.
+    </p>
+  </section>
+
+  <!-- garment x ground -->
+  <section class="section ground g-indigo wrap" data-ground="indigo">
+    <div class="grid g-12">
+      <div class="col-5">
+        <p class="eyebrow rv"><span class="tick"></span>How we photograph it</p>
+        <div class="hairline hairline--short rv mt-s"></div>
+        <h2 class="hook hook--s rv mt-m">The garment<br>is never the<br>middle value.</h2>
+        <p class="body muted mt-m rv">
+          Cloth only reads on screen when it separates from what is behind it. So each colour
+          family has one ground, and the rule does not bend on a rushed shoot day.
+        </p>
+      </div>
+      <div class="col-6 start-7">
+        <ul id="grounds"></ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tall ground g-iron wrap" data-ground="iron">
+    <div class="grid g-12">
+      <div class="col-8">
+        <p class="eyebrow rv"><span class="tick"></span>Next</p>
+        <h2 class="hook rv mt-m">Come and<br>touch it.</h2>
+        <div class="flexrow mt-l rv">
+          <a class="btn" href="fitting.html"><span class="tick"></span>Book a fitting</a>
+          <a class="link-u" href="made-to-measure.html">See how it is cut</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<script src="assets/js/site.js"></script>
+<script src="assets/js/art.js"></script>
+<script src="assets/js/blocks.js"></script>
+<script>
+function PAGE(){
+  document.querySelector('#bolts').innerHTML =
+    SITE.fabrics.map((f,i) => boltHTML(f, (i%4)*70)).join('');
+
+  const GROUNDS = [
+    { tones:'Ivory · cream · champagne', wear:'Sherwani, achkan, light indo-western',
+      g:'Indigo',  sw:'#16263D', why:'Maximum separation. The garment becomes the brightest object in the frame. The hero combination.' },
+    { tones:'Maroon · bottle green · rust', wear:'Festive kurta, jodhpuri, party wear',
+      g:'Chalk',   sw:'#EDE6D8', why:'Saturated tones need a light field to hold their chroma. On indigo they go muddy.' },
+    { tones:'Navy · black · charcoal', wear:'Bandhgala, tuxedo, suits, waistcoats',
+      g:'Chalk',   sw:'#EDE6D8', why:'Always chalk. On indigo these disappear entirely.' },
+    { tones:'Powder · sage · dusty pink', wear:'Contemporary kurta, engagement wear',
+      g:'Iron',    sw:'#3D4550', why:'Chalk washes pastels out and indigo makes them look accidental.' },
+    { tones:'Heavy zari · gold work', wear:'Wedding hero pieces, detail macro',
+      g:'Indigo',  sw:'#16263D', why:'With raking side light. Metallic thread only reads as metal against dark.' }
+  ];
+  document.querySelector('#grounds').innerHTML = GROUNDS.map(r => `
+    <li class="rv"
+        style="display:grid;grid-template-columns:auto 1fr;gap:clamp(16px,2vw,28px);
+               padding-block:clamp(20px,2.4vw,32px);border-top:1px solid var(--on-indigo-faint)">
+      <span style="width:44px;height:44px;background:${r.sw};box-shadow:inset 0 0 0 1px rgba(168,132,60,.45)"></span>
+      <span>
+        <span class="spec--caps brass spec">${r.g}</span>
+        <span class="subhead" style="font-size:clamp(1.05rem,1.6vw,1.35rem);display:block;margin-top:6px">${r.tones}</span>
+        <span class="spec muted" style="display:block;margin-top:6px">${r.wear}</span>
+        <span class="body muted" style="display:block;margin-top:10px;font-size:.98rem">${r.why}</span>
+      </span>
+    </li>`).join('');
+}
+</script>
+<script src="assets/js/kifa.js"></script>
+</body>
+</html>

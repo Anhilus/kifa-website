@@ -1,0 +1,8 @@
+# local scratch
+.cand/
+*.log
+.DS_Store
+Thumbs.db
+
+# the brand book is the client's document, not web content
+kifa-brand-guidelines-v0.1.docx

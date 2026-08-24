@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KIFA — Collection</title>
+<meta name="description" content="Sherwani, bandhgala, jodhpuri, kurta and waistcoat. Readymade carries a price. Bespoke is on request.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800&family=Lora:ital,wght@0,400;1,400;1,500&family=Mukta:wght@800&family=Noto+Nastaliq+Urdu:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/kifa.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2316263D'/%3E%3Cpath d='M11 12h13l-3 8H8z' fill='%23A8843C'/%3E%3C/svg%3E">
+</head>
+<body>
+
+<main id="main">
+
+  <section class="section ground g-indigo wrap" data-ground="indigo"
+           style="padding-top:clamp(140px,20vh,240px)">
+    <div class="grid g-12">
+      <div class="col-7">
+        <p class="eyebrow rv"><span class="tick"></span>Collection</p>
+        <div class="hairline hairline--short rv mt-s"></div>
+        <h1 class="hook rv mt-m">Ready today,<br>or cut for<br>November.</h1>
+      </div>
+      <div class="col-4 start-9" style="align-self:end">
+        <p class="body muted rv">
+          Readymade carries a price on the tag. Bespoke is on request, because the cloth and the
+          hours decide it. Every garment is shown on the ground its colour needs — ivory on
+          indigo, navy on chalk, pastels on iron.
+        </p>
+      </div>
+    </div>
+
+    <div class="filters mt-xl rv" id="filters" role="group" aria-label="Filter the collection">
+      <button data-filter="all" aria-pressed="true">Everything</button>
+      <button data-filter="bespoke" aria-pressed="false">Made to measure</button>
+      <button data-filter="ready" aria-pressed="false">Readymade</button>
+      <button data-filter="wedding" aria-pressed="false">Wedding</button>
+      <button data-filter="occasion" aria-pressed="false">Occasion</button>
+      <button data-filter="contemporary" aria-pressed="false">Contemporary</button>
+      <button data-filter="formal" aria-pressed="false">Formal</button>
+    </div>
+
+    <div class="grid g-3 mt-xl" id="grid"></div>
+
+    <p class="spec muted mt-xl rv">
+      Prices shown are for readymade pieces off the rail and include no alteration charge.
+      Bespoke is quoted in writing before the cloth is cut.
+    </p>
+  </section>
+
+  <!-- naming -->
+  <section class="section ground g-chalk wrap" data-ground="chalk">
+    <div class="grid g-12">
+      <div class="col-5">
+        <p class="eyebrow rv"><span class="tick"></span>Naming</p>
+        <div class="hairline hairline--short rv mt-s"></div>
+        <h2 class="hook hook--s rv mt-m">One name<br>word, one<br>garment.</h2>
+      </div>
+      <div class="col-6 start-7" style="align-self:end">
+        <p class="body muted rv">
+          Every piece is a name and a garment type, and nothing else. Noor Sherwani.
+          Riwaaz Kurta. Mehr Bandhgala. Short, rooted, easy to say aloud, and never a number.
+          If a name needs explaining, it does not go on a label.
+        </p>
+        <div class="flexrow mt-l rv">
+          <a class="btn" href="fitting.html"><span class="tick"></span>Book a fitting</a>
+          <a class="link-u" href="fabric.html">Choose the cloth first</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<script src="assets/js/site.js"></script>
+<script src="assets/js/art.js"></script>
+<script src="assets/js/blocks.js"></script>
+<script>
+function PAGE(){
+  document.querySelector('#grid').innerHTML = SITE.collection.map((it,i) => {
+    const html = plateHTML(it, { delay: (i%3)*110, href:'fitting.html' });
+    return html.replace('<a class="plate',
+      `<a data-kind="${it.kind}" data-family="${it.family}" class="plate`);
+  }).join('');
+}
+</script>
+<script src="assets/js/kifa.js"></script>
+</body>
+</html>
