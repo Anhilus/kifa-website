@@ -11,7 +11,7 @@
   const $  = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  window.KIFA_BUILD = 5;   /* bumped when behaviour changes; helps spot a stale cache */
+  window.KIFA_BUILD = 6;   /* bumped when behaviour changes; helps spot a stale cache */
 
   /* ---------- chrome: nav + footer ------------------------ */
   const here = location.pathname.split('/').pop() || 'index.html';
@@ -28,7 +28,7 @@
       <nav class="nav__links" id="navlinks" aria-label="Primary">
         ${SITE.nav.map(n => `<a class="nav__link" href="${n.href}"${
           n.href === here ? ' aria-current="page"' : ''}>${n.label}</a>`).join('')}
-        <a class="nav__cta" href="fitting.html"><span class="tick"></span>Book a fitting</a>
+        <a class="nav__cta" href="visit.html"><span class="tick"></span>Visit the shop</a>
       </nav>
     </header>`;
 
@@ -44,7 +44,7 @@
         <div class="foot__col foot__col--first">
           <p class="eyebrow"><span class="tick"></span>Wear</p>
           <ul class="mt-m spec">
-            <li class="foot__li"><a href="made-to-measure.html">Made to measure</a></li>
+            <li class="foot__li"><a href="how-it-is-made.html">How it is made</a></li>
             <li class="foot__li"><a href="collection.html">Collection</a></li>
             <li class="foot__li"><a href="fabric.html">Fabric library</a></li>
           </ul>
@@ -54,13 +54,13 @@
           <ul class="mt-m spec">
             <li class="foot__li"><a href="workshop.html">The workshop</a></li>
             <li class="foot__li"><a href="workshop.html#grooms">Grooms</a></li>
-            <li class="foot__li"><a href="fitting.html">Book a fitting</a></li>
+            <li class="foot__li"><a href="visit.html">Visit the shop</a></li>
           </ul>
         </div>
         <div class="foot__col">
           <p class="eyebrow"><span class="tick"></span>Reach</p>
           <ul class="mt-m spec">
-            <li class="foot__li"><a href="${SITE.wa('Hello KIFA. I would like to book a fitting.')}"
+            <li class="foot__li"><a href="${SITE.wa('Hello KIFA. I would like to come and try a piece.')}"
                 target="_blank" rel="noopener">WhatsApp</a></li>
             <li class="foot__li"><a href="tel:${SITE.phoneRaw}">${SITE.phone}</a></li>
             <li class="foot__li"><a href="mailto:${SITE.email}">${SITE.email}</a></li>
@@ -69,7 +69,7 @@
       </div>
       <div class="foot__bot spec muted">
         <span>&copy; ${new Date().getFullYear()} ${SITE.name}. ${SITE.line}</span>
-        <span>Made to measure in ${SITE.city}. Four to six weeks, honestly.</span>
+        <span>Cut and finished in ${SITE.city}. Sold off the rail, honestly.</span>
       </div>
     </footer>`;
 
@@ -159,24 +159,24 @@
     });
   };
 
-  /* ---------- fitting form -> WhatsApp -------------------- */
-  const fittingForm = () => {
-    const form = $('#fitting');
+  /* ---------- visit note -> WhatsApp ---------------------- */
+  const visitForm = () => {
+    const form = $('#visitnote');
     if (!form) return;
     form.addEventListener('submit', (e) => {
       e.preventDefault();
       const d = Object.fromEntries(new FormData(form).entries());
       const msg =
-        `Fitting request — ${SITE.name}\n` +
+        `Visit request — ${SITE.name}\n` +
         `Name: ${d.name || '—'}\n` +
         `Phone: ${d.phone || '—'}\n` +
         `Occasion: ${d.occasion || '—'}\n` +
         `Date of the event: ${d.date || '—'}\n` +
         `Garment: ${d.garment || '—'}\n` +
-        `Fabric of interest: ${d.fabric || '—'}\n` +
+        `Size: ${d.size || '—'}\n` +
         `Preferred visit: ${d.slot || '—'}\n` +
         (d.notes ? `Notes: ${d.notes}\n` : '') +
-        `\nI understand made to measure takes four to six weeks.`;
+        `\nI understand every garment is sold finished, off the rail.`;
       const out = $('#formout');
       if (out) {
         out.textContent = 'Opening WhatsApp with your card. If nothing happens, call ' + SITE.phone + '.';
@@ -216,7 +216,7 @@
     reveals();
     navState();
     filters();
-    fittingForm();
+    visitForm();
     opening();
     numbers();
   };

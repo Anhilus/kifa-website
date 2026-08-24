@@ -18,33 +18,40 @@ it changes on every page.
 | `street` | Shop 14, Katra Neel, Chandni Chowk | Real address |
 | `postcode` | 110006 | Real postcode |
 | `phone` / `phoneRaw` | +91 90000 00000 | Real number. `phoneRaw` is digits only, country code first — it builds every WhatsApp link |
-| `email` | fittings@kifa.example | Real inbox |
+| `email` | shop@kifa.example | Real inbox |
 | `hours` / `closed` | Tue–Sun 11:00–20:30 | Real hours |
 | `founded` / `since` | 1984 / "Forty years…" | The real founding year. The voice line quotes it |
 
-## 2 · The count — `SITE.count` and the timeline on `made-to-measure.html`
+## 2 · The count — `SITE.count` and the timeline on `how-it-is-made.html`
 
 Every number on this site is a claim a customer can check, which is the point of the
 voice — and the risk. Confirm or change:
 
 - **11 buttonholes** on the Noor sherwani
-- **4–6 weeks** start to delivery
-- **3 fittings** included in the price
-- **22 measurements** taken at the first appointment
-- **0 deposit** until the cloth is cut
-- **First alteration not charged** (stated on `made-to-measure.html`)
+- **~30 garments cut from one bolt**, and the line ends when the bolt does
+- **48 hours** for an alteration
+- **Sizes 38 to 48** in the chest, on every garment
+- **Alterations never charged**, for as long as the customer owns the garment
 - **~9 minutes per hand-worked buttonhole** (stated on `workshop.html`)
+
+Every one of these replaced a made-to-measure number (22 measurements, 3 fittings,
+4–6 weeks) when the house was confirmed as readymade-only. They are just as invented
+as the ones they replaced, and they are load-bearing: the whole positioning now rests
+on small runs, house sizing and free alterations. Confirm each before launch.
 
 ## 3 · Prices — `SITE.collection`
 
-Readymade prices are invented and formatted `₹ 00,000`. Bespoke correctly reads
-"On request" and should stay that way — the brand book forbids discount language on
-the hero product. Open decision 03 in the guidelines asks for price bands and average
-order value; those numbers should set these.
+Every garment now carries a price, because nothing is made to order any more. All nine
+are invented and formatted `₹ 00,000`. The four that previously read "On request" —
+Noor Sherwani, Kamkhwab Sherwani, Jamawar Jodhpuri, Chandni Bandhgala — were given
+numbers between ₹ 19,800 and ₹ 32,000 purely so the rail reads as a rail. **These are
+the most dangerous placeholders on the site: they are public, they are specific, and a
+customer can hold you to them.** Open decision 03 in the guidelines asks for price bands
+and average order value; those numbers should set these.
 
 ## 4 · Named grooms — `SITE.grooms`
 
-**Arjun, Ibrahim and Devansh are invented.** Their months, fitting counts and stories
+**Arjun, Ibrahim and Devansh are invented.** Their months, alterations and stories
 are written in brand voice but none of it happened. Open decision 01 in the guidelines
 makes this a blocker: real names need signed releases before publication.
 
@@ -87,8 +94,12 @@ packaging, labels or anything printed.
 
 ## 9 · Things the guidelines say are unanswered and this site had to assume
 
-- **Made to measure is the commercial priority** over readymade volume. The whole site
-  is built on this. If sales data says otherwise, the home page changes first.
+- **KIFA sells finished garments only.** Confirmed by the client on 2026-08-25: no
+  cloth by the metre, and nothing cut to a customer's measurements. The site was rebuilt
+  around workshop-made small runs, house sizing and free alterations. If this is ever
+  wrong, the home page changes first.
+- **Alterations are free and take 48 hours.** Assumed, not confirmed. It carries the
+  fit promise that made-to-measure used to carry, so it needs to be true.
 - **Groom-first audience**, not the occasion buyer.
 - **Local catchment**, not national shipping — there is no shipping copy anywhere.
 - **Menswear only.** No bridal, per open decision 04.

@@ -2,7 +2,7 @@
 
 ## Project
 
-Building a premium heritage website for **KIFA**, Indian made-to-measure menswear.
+Building a premium heritage website for **KIFA**, Indian menswear sold ready to wear.
 Working directory: `D:\kifa website`. Git repo, pushed to
 `https://github.com/Anhilus/kifa-website` (public), served by GitHub Pages at
 `https://anhilus.github.io/kifa-website/`. The brand-book .docx is gitignored on purpose.
@@ -10,6 +10,22 @@ Working directory: `D:\kifa website`. Git repo, pushed to
 Source of truth: `kifa-brand-guidelines-v0.1.docx` in the project root — a real brand
 book (colour, typography, wordmark spec, photography rules, layout rules, voice rules).
 Read it first; everything below traces back to it.
+
+## The house sells readymade only
+
+Confirmed by the client on 2026-08-25: **KIFA does not sell unstitched cloth, and does not
+cut garments to a customer's measurements.** Everything is made in the workshop first and
+sold finished, off the rail.
+
+This contradicts the brand book, which is written for a made-to-measure house — treat the
+book as the authority on colour, type, voice and photography, and this note as the
+authority on what is sold. The site was rewritten around three replacement claims:
+small runs (about thirty garments to a bolt), house sizing (38 to 48), and free
+alterations in forty-eight hours. All three are invented and logged in `PLACEHOLDERS.md`.
+
+Do not reintroduce: fittings, measurements taken, lead times in weeks, "bespoke",
+"on request" pricing, or any offer of cloth by the metre. `assets/js/site.js` carries the
+same warning at the top of the file.
 
 ## Key tension to know about
 
@@ -27,7 +43,7 @@ The user was told this explicitly and accepted it.
 - Photography is free-licensed stock placeholder; line-work is the fallback (see Photography)
 - Nastaliq used ceremonially, on fabric bolt names only
 - Menswear only, no bridal
-- Fitting-request form → WhatsApp deep link, no cart
+- Visit-note form → WhatsApp deep link, no cart
 - Full brand-voice copy written, all invented facts logged in `PLACEHOLDERS.md`
 - Shop is in **Delhi** (Katra Neel, Chandni Chowk, 110006) — was Hyderabad early on,
   corrected later. `SITE.city` drives every mention.
@@ -36,11 +52,13 @@ The user was told this explicitly and accepted it.
 
 ```
 index.html              Home — the still opening, then the garment x ground row
-made-to-measure.html    Five-step process, static rail
+how-it-is-made.html     Five steps from bolt to rail, static rail
 collection.html         9 garments, filterable
 fabric.html             Fabric library + garment x ground table
 workshop.html           Story, craft proof, named grooms
-fitting.html            Measurement card form
+visit.html              Visit note form
+made-to-measure.html    Redirect stub to how-it-is-made.html
+fitting.html            Redirect stub to visit.html
 
 assets/css/kifa.css        tokens, grounds, type scale, the one reveal, nav
 assets/css/components.css  opening, rules row, plates, count, sequence, bolts, card, footer
@@ -64,10 +82,10 @@ Rebuilt again after client review — see `docs/superpowers/specs/2026-08-23-qui
 The client read the previous build as "too animated and childish". The scroll-driven
 stage is gone.
 
-- `.opening` is one ordinary section, `min-height:92svh`, that scrolls normally. One
-  garment (Noor sherwani, ivory line-work on indigo — the hero combination), held still,
-  at `min(54vh,540px)`. Buttonholes are present from first paint, drawn in brass as
-  hardware. The count is stated in the margin as type: `11 · buttonholes, all cut by hand`.
+- `.opening` is one ordinary section, `min-height:92svh`, that scrolls normally. It
+  carries a photograph (`SITE.photo.hero`) at `min(58vh,580px)`, with the drawn Noor
+  sherwani as the fallback if the file is missing. The count is stated in the margin as
+  type: `11 · buttonholes, all cut by hand`.
 - The four garment × ground rules that the old hero cycled through are now a still
   four-up row further down the home page (`.rules`, built by `ruleCellHTML()` in
   `blocks.js`, still fed from `SITE.stage`).
@@ -125,6 +143,10 @@ testimonial.
 ## Open threads
 
 - Live URL is up and verified: all images load, no console errors, no failed requests.
+- `made-to-measure.html` and `fitting.html` are meta-refresh redirect stubs, kept because
+  those URLs were already published. Delete them once nothing links to them.
+- The prices on the four formerly-bespoke garments are invented and now public. That is
+  the sharpest open risk on the site — see PLACEHOLDERS.md section 3.
 - The client has not yet seen the quiet build. Screenshots exist for all six pages at
   1440x900 and 375x812, console clean, `prefers-reduced-motion` renders complete.
 - The phone opening no longer fits one screen (garment 36vh plus the copy stack runs to

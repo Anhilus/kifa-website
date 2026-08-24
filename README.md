@@ -17,13 +17,15 @@ Then open `http://localhost:8123`.
 
 ```
 index.html              Home
-made-to-measure.html    The five-step process
+how-it-is-made.html     The five steps from bolt to rail
 collection.html         Garments, filterable
-fabric.html             The fabric library and the garment × ground table
-workshop.html           Story, craft proof, named grooms
-fitting.html            The measurement card
+fabric.html             The cloth the workshop cuts from, and the garment × ground table
+workshop.html           Story, craft proof, named customers
+visit.html              The visit note
+made-to-measure.html    Redirect stub → how-it-is-made.html (old published URL)
+fitting.html            Redirect stub → visit.html (old published URL)
 
-assets/css/kifa.css       tokens, grounds, type scale, motion, nav, tape
+assets/css/kifa.css       tokens, grounds, type scale, the one reveal, nav
 assets/css/components.css plates, count, sequence, bolts, card, footer
 
 assets/js/site.js       ALL CONTENT. Edit here, it changes everywhere.

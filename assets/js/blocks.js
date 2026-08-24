@@ -3,7 +3,7 @@
    The garment plate, the fabric bolt row, the groom record.
    Each one enforces a brand rule so a page cannot break it by
    accident: ground follows the garment, price follows the
-   bespoke/readymade split, the docket sits below the frame.
+   every garment carries a price, the docket sits below the frame.
    ============================================================ */
 
 const INK = { 'pg-indigo': '#A8843C', 'pg-chalk': '#16263D', 'pg-iron': '#EDE6D8' };
@@ -43,7 +43,7 @@ function plateHTML(it, opts = {}) {
         <span class="plate__name">${it.name}</span>
         ${it.deva ? `<span class="deva muted" style="font-size:.86rem;display:block;margin-top:2px">${it.deva}</span>` : ''}
       </span>
-      <span class="plate__price spec ${it.kind === 'bespoke' ? 'brass' : ''}">${it.price}</span>
+      <span class="plate__price spec">${it.price}</span>
     </div>
     <p class="spec muted" style="margin-top:6px">${it.fabric} &middot; ${it.spec}</p>` : ''}
   </a>`;
@@ -101,9 +101,9 @@ function groomHTML(g, i) {
       <p class="voice mt-m">${g.line}</p>
       <p class="body muted mt-m">${g.body}</p>
       <dl class="dock mt-l spec">
-        <div><dt class="spec--caps brass">Chose</dt><dd>${g.chose}</dd></div>
-        <div><dt class="spec--caps brass">Married</dt><dd>${g.married}</dd></div>
-        <div><dt class="spec--caps brass">Fittings</dt><dd>${g.fittings}</dd></div>
+        <div><dt class="spec--caps brass">Bought</dt><dd>${g.bought}</dd></div>
+        <div><dt class="spec--caps brass">Wore it</dt><dd>${g.wore}</dd></div>
+        <div><dt class="spec--caps brass">Altered</dt><dd>${g.altered}</dd></div>
         <div style="grid-column:span 2"><dt class="spec--caps brass">Garment</dt><dd>${g.garment}</dd></div>
       </dl>
     </div>

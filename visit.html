@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KIFA — Visit the shop</title>
+<meta name="description" content="Send a note, we hold the piece. Everything at KIFA is finished and hanging — come and try it on.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800&family=Lora:ital,wght@0,400;1,400;1,500&family=Mukta:wght@800&family=Noto+Nastaliq+Urdu:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/kifa.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2316263D'/%3E%3Cpath d='M11 12h13l-3 8H8z' fill='%23A8843C'/%3E%3C/svg%3E">
+</head>
+<body>
+
+<main id="main">
+
+  <section class="section ground g-indigo wrap" data-ground="indigo"
+           style="padding-top:clamp(140px,20vh,240px)">
+    <div class="grid g-12">
+      <div class="col-5">
+        <p class="eyebrow rv"><span class="tick"></span>Visit the shop</p>
+        <div class="hairline hairline--short rv mt-s"></div>
+        <h1 class="hook hook--s rv mt-m">Come and<br>try it on.</h1>
+        <p class="voice muted mt-m rv">
+          We will tell you honestly what is hanging in your size.
+        </p>
+        <p class="body muted mt-m rv">
+          This is a note, not a checkout. Fill it in and it opens WhatsApp with everything
+          written out, so the piece is off the rail and waiting when you arrive.
+        </p>
+
+        <dl class="mt-xl spec" id="visit"></dl>
+
+        <p class="spec mt-l rv">
+          <span class="spec--caps brass">One thing only</span><br>
+          <span class="muted">One visit, one note, one reply. We do not send follow-up
+          offers, and the price on the tag is the price.</span>
+        </p>
+      </div>
+
+      <div class="col-6 start-7">
+        <form class="card rv" id="visitnote" novalidate>
+          <div class="card__head">
+            <div>
+              <p class="eyebrow"><span class="tick"></span>Visit note</p>
+              <p class="subhead" style="font-size:clamp(1.4rem,2.2vw,2rem);margin-top:10px">
+                KIFA &mdash; visit request
+              </p>
+            </div>
+            <p class="spec" style="text-align:right;color:var(--on-chalk-muted)" id="cardno"></p>
+          </div>
+
+          <div class="fields-2">
+            <p class="field">
+              <label for="f-name">Name</label>
+              <input id="f-name" name="name" type="text" placeholder="As you would like it on the note" required>
+            </p>
+            <p class="field">
+              <label for="f-phone">Phone or WhatsApp</label>
+              <input id="f-phone" name="phone" type="tel" placeholder="+91" required>
+            </p>
+          </div>
+
+          <div class="fields-2">
+            <p class="field">
+              <label for="f-occasion">Occasion</label>
+              <select id="f-occasion" name="occasion">
+                <option>Wedding — groom</option>
+                <option>Wedding — family</option>
+                <option>Engagement or reception</option>
+                <option>Festival or family function</option>
+                <option>Formal or business</option>
+              </select>
+            </p>
+            <p class="field">
+              <label for="f-date">Date you need it</label>
+              <input id="f-date" name="date" type="date">
+            </p>
+          </div>
+
+          <div class="fields-2">
+            <p class="field">
+              <label for="f-garment">Garment</label>
+              <select id="f-garment" name="garment"></select>
+            </p>
+            <p class="field">
+              <label for="f-size">Chest size</label>
+              <select id="f-size" name="size">
+                <option>Not sure — measure me in the shop</option>
+                <option>38</option><option>40</option><option>42</option>
+                <option>44</option><option>46</option><option>48</option>
+              </select>
+            </p>
+          </div>
+
+          <p class="field">
+            <label for="f-slot">Preferred visit</label>
+            <select id="f-slot" name="slot">
+              <option>Weekday morning</option>
+              <option>Weekday evening</option>
+              <option>Saturday</option>
+              <option>Sunday</option>
+              <option>Any time — call me</option>
+            </select>
+          </p>
+
+          <p class="field">
+            <label for="f-notes">Anything we should know</label>
+            <textarea id="f-notes" name="notes" placeholder="A colour you are looking for, a collar you like, a garment of ours you saw and want held."></textarea>
+          </p>
+
+          <div class="flexrow mt-l" style="justify-content:space-between">
+            <button class="btn" type="submit" style="border-color:var(--indigo)">
+              <span class="tick"></span>Send the note
+            </button>
+            <span class="spec" style="color:var(--on-chalk-muted);max-width:26ch">
+              We hold a piece for forty-eight hours. Alterations, if you need them, take another forty-eight.
+            </span>
+          </div>
+          <p class="spec brass mt-m" id="formout" hidden></p>
+        </form>
+
+        <p class="spec muted mt-m rv">
+          Prefer to talk? <a class="link-u" style="padding-bottom:.2em" id="waLink" target="_blank" rel="noopener" href="#">Message us on WhatsApp</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- what happens next -->
+  <section class="section ground g-chalk wrap" data-ground="chalk">
+    <div class="grid g-12">
+      <div class="col-4">
+        <p class="eyebrow rv"><span class="tick"></span>After you send it</p>
+        <h2 class="hook hook--s rv mt-m">Three<br>replies.</h2>
+      </div>
+      <ol class="col-7 start-6">
+        <li class="rv" style="padding-block:clamp(20px,2.4vw,32px);border-top:1px solid var(--on-chalk-faint)">
+          <p class="subhead" style="font-size:clamp(1.2rem,1.9vw,1.6rem)">Within a day — what is hanging in your size</p>
+          <p class="body muted mt-s">If the piece you asked about is not in your size, we say so
+            first, before anything else is discussed. We do not cut a new one to order.</p>
+        </li>
+        <li class="rv" style="padding-block:clamp(20px,2.4vw,32px);border-top:1px solid var(--on-chalk-faint)">
+          <p class="subhead" style="font-size:clamp(1.2rem,1.9vw,1.6rem)">A time at the shop</p>
+          <p class="body muted mt-s">Twenty minutes is usually enough. Bring the shoes you will
+            wear it with, and we will hold the piece until you have tried it.</p>
+        </li>
+        <li class="rv" style="padding-block:clamp(20px,2.4vw,32px);border-top:1px solid var(--on-chalk-faint);border-bottom:1px solid var(--on-chalk-faint)">
+          <p class="subhead" style="font-size:clamp(1.2rem,1.9vw,1.6rem)">The price on the tag</p>
+          <p class="body muted mt-s">The same number you see on this site and in the shop. Any
+            alteration we make to it is included, and nothing is charged until you say yes.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+</main>
+
+<script src="assets/js/site.js"></script>
+<script src="assets/js/art.js"></script>
+<script src="assets/js/blocks.js"></script>
+<script>
+function PAGE(){
+  const $ = s => document.querySelector(s);
+
+  $('#f-garment').innerHTML =
+    ['Not decided yet', ...SITE.collection.map(c => c.name)]
+      .map(n => `<option>${n}</option>`).join('');
+
+  const d = new Date();
+  $('#cardno').innerHTML =
+    `<span class="spec--caps brass">Note</span><br>` +
+    `${String(d.getFullYear()).slice(2)}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+
+  $('#visit').innerHTML = `
+    <div style="padding-block:14px;border-top:1px solid var(--on-indigo-faint)">
+      <dt class="spec--caps brass">The shop</dt>
+      <dd class="muted" style="margin-top:6px">${SITE.street}<br>${SITE.city} ${SITE.postcode}</dd>
+    </div>
+    <div style="padding-block:14px;border-top:1px solid var(--on-indigo-faint)">
+      <dt class="spec--caps brass">Hours</dt>
+      <dd class="muted" style="margin-top:6px">${SITE.hours}<br>${SITE.closed}</dd>
+    </div>
+    <div style="padding-block:14px;border-top:1px solid var(--on-indigo-faint);border-bottom:1px solid var(--on-indigo-faint)">
+      <dt class="spec--caps brass">Direct</dt>
+      <dd class="muted" style="margin-top:6px">
+        <a href="tel:${SITE.phoneRaw}">${SITE.phone}</a><br>
+        <a href="mailto:${SITE.email}">${SITE.email}</a>
+      </dd>
+    </div>`;
+
+  $('#waLink').href = SITE.wa('Hello KIFA. I would like to come and try a piece.');
+}
+</script>
+<script src="assets/js/kifa.js"></script>
+</body>
+</html>

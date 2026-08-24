@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>KIFA — Collection</title>
-<meta name="description" content="Sherwani, bandhgala, jodhpuri, kurta and waistcoat. Readymade carries a price. Bespoke is on request.">
+<meta name="description" content="Sherwani, bandhgala, jodhpuri, kurta and waistcoat. All finished, all on the rail, all with a price on the tag.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800&family=Lora:ital,wght@0,400;1,400;1,500&family=Mukta:wght@800&family=Noto+Nastaliq+Urdu:wght@400;600&display=swap" rel="stylesheet">
@@ -22,22 +22,20 @@
       <div class="col-7">
         <p class="eyebrow rv"><span class="tick"></span>Collection</p>
         <div class="hairline hairline--short rv mt-s"></div>
-        <h1 class="hook rv mt-m">Ready today,<br>or cut for<br>November.</h1>
+        <h1 class="hook rv mt-m">Everything<br>here is<br>finished.</h1>
       </div>
       <div class="col-4 start-9" style="align-self:end">
         <p class="body muted rv">
-          Readymade carries a price on the tag. Bespoke is on request, because the cloth and the
-          hours decide it. Every garment is shown on the ground its colour needs — ivory on
-          indigo, navy on chalk, pastels on iron.
+          Every garment carries a price on the tag. Nothing here is made to order and nothing
+          is sold as cloth — what hangs on the rail is the whole offer. Each one is shown on the
+          ground its colour needs: ivory on indigo, navy on chalk, pastels on iron.
         </p>
       </div>
     </div>
 
     <div class="filters mt-xl rv" id="filters" role="group" aria-label="Filter the collection">
       <button data-filter="all" aria-pressed="true">Everything</button>
-      <button data-filter="bespoke" aria-pressed="false">Made to measure</button>
-      <button data-filter="ready" aria-pressed="false">Readymade</button>
-      <button data-filter="wedding" aria-pressed="false">Wedding</button>
+                  <button data-filter="wedding" aria-pressed="false">Wedding</button>
       <button data-filter="occasion" aria-pressed="false">Occasion</button>
       <button data-filter="contemporary" aria-pressed="false">Contemporary</button>
       <button data-filter="formal" aria-pressed="false">Formal</button>
@@ -46,8 +44,8 @@
     <div class="grid g-3 mt-xl" id="grid"></div>
 
     <p class="spec muted mt-xl rv">
-      Prices shown are for readymade pieces off the rail and include no alteration charge.
-      Bespoke is quoted in writing before the cloth is cut.
+      Every price shown is the price on the tag, off the rail, with any alteration we make
+      included. Nothing on this page is made to order, and we do not sell cloth by the metre.
     </p>
   </section>
 
@@ -66,7 +64,7 @@
           If a name needs explaining, it does not go on a label.
         </p>
         <div class="flexrow mt-l rv">
-          <a class="btn" href="fitting.html"><span class="tick"></span>Book a fitting</a>
+          <a class="btn" href="visit.html"><span class="tick"></span>Visit the shop</a>
           <a class="link-u" href="fabric.html">Choose the cloth first</a>
         </div>
       </div>
@@ -81,7 +79,7 @@
 <script>
 function PAGE(){
   document.querySelector('#grid').innerHTML = SITE.collection.map((it,i) => {
-    const html = plateHTML(it, { delay: (i%3)*110, href:'fitting.html' });
+    const html = plateHTML(it, { delay: (i%3)*110, href:'visit.html' });
     return html.replace('<a class="plate',
       `<a data-kind="${it.kind}" data-family="${it.family}" class="plate`);
   }).join('');
